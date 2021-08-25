@@ -3,8 +3,8 @@
     University of California, Berkeley
     Instructors: Paul Hilfinger
     hilfingr@cs.berkeley.edu
-    Office Hours: -
-    Lecture: Mon/Wed/Fri 1:00pm-2:00pm
+    Office Hours: TBD
+    Lecture: Mon/Wed/Fri 1:00pm-2:00pm, Stanley 105 as capacity allows
     Author: Will Tholke
 
 ## Table of Contents
@@ -257,12 +257,6 @@
 -
 
 ## Lecture 40, 12/03/21 (Wk15): -
-
-### Subtitle #1
-  
--
-
-## Lecture 41, 12/13/21 (Wk16): -
 
 ### Subtitle #1
   
