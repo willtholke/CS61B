@@ -57,6 +57,7 @@ Multi-line comments look like this:
 ### Git
 
 Basic commands:
+
 - `git init`
 - `git add .`
 - `git commit -m "message"`
@@ -64,6 +65,7 @@ Basic commands:
 - See previous commits: `git log`
 
 Undo changes in Git with this workflow:
+
 - Unstage a file that's uncommitted: `git reset HEAD [file]`
 - Amend latest commit:
   - `git add [forgotten-file]`
@@ -71,6 +73,7 @@ Undo changes in Git with this workflow:
   - `git checkout -- [file]` *use with caution!*
 
 Branching:
+
 - Create branch: `git branch [new-branch-name]`
 - Switch branch: `git checkout [destination-branch]`
   - Create & checkout at once: `git checkout -b [new-branch-name]`
@@ -78,7 +81,7 @@ Branching:
 - Delete branch: `git branch -d [branch-to-delete]`
 - Figure out what branch you're on: `git branch -v`
 
-### Remote Repos
+Remote Repos:
 
 - Add remotes: `git remote add [short-name] [remote-url]`
 - Rename: `git remote rename [old-name] [new-name]`
