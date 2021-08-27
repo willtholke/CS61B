@@ -8,6 +8,53 @@
     https://berkeley.zoom.us/j/94882182481?pwd=Q1BuVGdHb2p3T3JKc2xhMHRpZE9jQT09#success
     Author: Will Tholke
 
+### Resources
+
+- [JavaTutor](https://pythontutor.com/java.html#mode=edit)
+- [Online Java Compiler](https://www.tutorialspoint.com/compile_java8_online.php)
+
+### Git
+
+**Basic commands:**
+
+- `git init`
+- `git add .`
+- `git commit -m "message"`
+- See the status of each repo file: `git status`
+- See previous commits: `git log`
+
+**Undo changes in Git with this workflow:**
+
+- Unstage a file that's uncommitted: `git reset HEAD [file]`
+- Amend latest commit:
+  - `git add [forgotten-file]`
+  - `git commit --amend`
+  - `git checkout -- [file]` *use with caution!*
+
+**Branching:**
+
+- Create branch: `git branch [new-branch-name]`
+- Switch branch: `git checkout [destination-branch]`
+  - Create & checkout at once: `git checkout -b [new-branch-name]`
+  - Merge: `git merge [branch-name]`
+- Delete branch: `git branch -d [branch-to-delete]`
+- Figure out what branch you're on: `git branch -v`
+
+**Remote Repos:**
+
+- Add remotes: `git remote add [short-name] [remote-url]`
+- Rename: `git remote rename [old-name] [new-name]`
+- Remove: `git remote rm [remote-name]`
+- Clone: `git clone [remote-url] [optional-directory-name]`
+- Push: `git push [remote-name] [remote-branch]`
+  - `git push origin master`
+- Fetch: `git fetch [remote-name]`
+  - Best used when reviewing changes without incorporating them into your own code
+- Pull: `git pull [remote-name] [remote-branch-name]`
+  - Equivalent to `fetch + merge`
+  - When you know it won't break your code, use `git pull origin master`
+
+
 ## Lab01 Notes: [[Source]](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lab/lab1/#test-run)
 
 ### Remote SSH Access
@@ -25,7 +72,6 @@ git fetch shared
 git merge -m "Start Assignment ##"
 git push
 ```
-
 
 ### Java Compilation & Development
 
@@ -53,44 +99,3 @@ Multi-line comments look like this:
 /* This is a
    multi-line comment */
 ```
-
-### Git
-
-Basic commands:
-
-- `git init`
-- `git add .`
-- `git commit -m "message"`
-- See the status of each repo file: `git status`
-- See previous commits: `git log`
-
-Undo changes in Git with this workflow:
-
-- Unstage a file that's uncommitted: `git reset HEAD [file]`
-- Amend latest commit:
-  - `git add [forgotten-file]`
-  - `git commit --amend`
-  - `git checkout -- [file]` *use with caution!*
-
-Branching:
-
-- Create branch: `git branch [new-branch-name]`
-- Switch branch: `git checkout [destination-branch]`
-  - Create & checkout at once: `git checkout -b [new-branch-name]`
-  - Merge: `git merge [branch-name]`
-- Delete branch: `git branch -d [branch-to-delete]`
-- Figure out what branch you're on: `git branch -v`
-
-Remote Repos:
-
-- Add remotes: `git remote add [short-name] [remote-url]`
-- Rename: `git remote rename [old-name] [new-name]`
-- Remove: `git remote rm [remote-name]`
-- Clone: `git clone [remote-url] [optional-directory-name]`
-- Push: `git push [remote-name] [remote-branch]`
-  - `git push origin master`
-- Fetch: `git fetch [remote-name]`
-  - Best used when reviewing changes without incorporating them into your own code
-- Pull: `git pull [remote-name] [remote-branch-name]`
-  - Equivalent to `fetch + merge`
-  - When you know it won't break your code, use `git pull origin master`
