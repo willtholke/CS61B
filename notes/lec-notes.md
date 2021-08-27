@@ -139,7 +139,7 @@ The main method of a java program is defined under `public static void main(Stri
 
 ```java
 private static void printPrimes(int limit) {
-  int np;  // notice that semicolons follows standalone lines
+  int np;  // notice that semicolons follow standalone lines
   np = 0;
   for (int p = 2; p <= limit; p += 1) {  // p initialized; p <= limit is the condition; p += 1 for each iteration
     if (isPrime(p)) {
