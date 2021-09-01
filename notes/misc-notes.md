@@ -12,6 +12,7 @@
 
 - [JavaTutor](https://pythontutor.com/java.html#mode=edit)
 - [Online Java Compiler](https://www.tutorialspoint.com/compile_java8_online.php)
+- [IntelliJ IDEA Overview (Documentation)](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#multi-platform-IDE)
 
 ### Git
 
