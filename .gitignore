@@ -1,5 +1,5 @@
 # Private course materials
-/tutoring
+/discussion
 /proj
 /disc
 /lab
@@ -8,3 +8,5 @@
 
 # Other
 **/.DS_Store
+.idea
+cs61b.iml
