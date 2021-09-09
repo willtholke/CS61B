@@ -311,7 +311,7 @@ A[2] = new int[] {8, 27, 64, 125};
 - **Unit testing** - testing of individual units (methods) within a program, rather than the whole program
 - **Module testing** - testing of classes or other groupings of methods and data
 - **System testing (acceptance testing)** - testing of the functionality of an entire program
-- **Integration testing** - intermediate between unit and system testing, tests that modules work correctly together.
+- **Integration testing** - intermediate between unit and system testing, tests that modules work correctly together
 - **Regression testing** - testing with the specific goal of the cheking that fixes, enhances, or makes other changes that have not introduced faults (regressions)
 
 ### Testing Workflow (Test Driven Development)
