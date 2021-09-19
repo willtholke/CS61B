@@ -44,71 +44,81 @@
     - [Instance Methods](#instance-methods)
     - [Constructors](#constructors)
   - [Lecture 8, 09/13/21 (Wk4): Object-oriented Mechanisms](#lecture-8-091321-wk4-object-oriented-mechanisms)
-    - [Subtitle #1](#subtitle-1)
+    - [Overloading](#overloading)
+    - [Generic Data Structures](#generic-data-structures)
+    - [Primitive Values](#primitive-values)
+    - [Autoboxing](#autoboxing)
+    - [Dynamic vs. Static types](#dynamic-vs-static-types)
+    - [Type Hierarchies](#type-hierarchies)
+    - [The Basic Static Type Rule](#the-basic-static-type-rule)
+    - [Overriding and Extension](#overriding-and-extension)
+    - [Extending a Class](#extending-a-class)
   - [Lecture 9, 09/15/21 (Wk4): Interfaces and Abstract Classes](#lecture-9-091521-wk4-interfaces-and-abstract-classes)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Abstract Methods and Classes](#abstract-methods-and-classes)
+    - [Overriding Methods](#overriding-methods)
+    - [Interfaces](#interfaces)
   - [Lecture 10, 09/17/21 (Wk4): Interfaces and Abstract Classes](#lecture-10-091721-wk4-interfaces-and-abstract-classes)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Specification Seen by Clients](#specification-seen-by-clients)
   - [Lecture 11, 09/20/21 (Wk5): Examples: Comparable and Reader](#lecture-11-092021-wk5-examples-comparable-and-reader)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 12, 09/22/21 (Wk5): Additional OOP Details, Exceptions](#lecture-12-092221-wk5-additional-oop-details-exceptions)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 13, 09/24/21 (Wk5): Packages, Access, Loose Ends](#lecture-13-092421-wk5-packages-access-loose-ends)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 14, 09/27/21 (Wk6): Integers](#lecture-14-092721-wk6-integers)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 15, 09/29/21 (Wk6): Integers](#lecture-15-092921-wk6-integers)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 16, 10/01/21 (Wk6): Complexity](#lecture-16-100121-wk6-complexity)
-    - [Subtitle #1](#subtitle-1-8)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 17, 10/04/21 (Wk7): Collections, Amortization](#lecture-17-100421-wk7-collections-amortization)
-    - [Subtitle #1](#subtitle-1-9)
+    - [Subtitle #1](#subtitle-1-6)
   - [Lecture 18, 10/06/21 (Wk7): Sequences, Some Design Patterns](#lecture-18-100621-wk7-sequences-some-design-patterns)
-    - [Subtitle #1](#subtitle-1-10)
+    - [Subtitle #1](#subtitle-1-7)
   - [Lecture 19, 10/08/21 (Wk7): Sequences (II)](#lecture-19-100821-wk7-sequences-ii)
-    - [Subtitle #1](#subtitle-1-11)
+    - [Subtitle #1](#subtitle-1-8)
   - [Lecture 20, 10/11/21 (Wk8): Trees](#lecture-20-101121-wk8-trees)
-    - [Subtitle #1](#subtitle-1-12)
+    - [Subtitle #1](#subtitle-1-9)
   - [Lecture 21, 10/13/21 (Wk8): Tree searching](#lecture-21-101321-wk8-tree-searching)
-    - [Subtitle #1](#subtitle-1-13)
+    - [Subtitle #1](#subtitle-1-10)
   - [Lecture 22, 10/03/21 (Wk8): Game trees](#lecture-22-100321-wk8-game-trees)
-    - [Subtitle #1](#subtitle-1-14)
+    - [Subtitle #1](#subtitle-1-11)
   - [Lecture 23, 10/18/21 (Wk9): Priority Queues, Range Queries](#lecture-23-101821-wk9-priority-queues-range-queries)
-    - [Subtitle #1](#subtitle-1-15)
+    - [Subtitle #1](#subtitle-1-12)
   - [Lecture 24, 10/20/21 (Wk9): Hashing](#lecture-24-102021-wk9-hashing)
-    - [Subtitle #1](#subtitle-1-16)
+    - [Subtitle #1](#subtitle-1-13)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
-    - [Subtitle #1](#subtitle-1-17)
+    - [Subtitle #1](#subtitle-1-14)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
-    - [Subtitle #1](#subtitle-1-18)
+    - [Subtitle #1](#subtitle-1-15)
   - [Lecture 27, 10/27/21 (Wk10): Sorting (II)](#lecture-27-102721-wk10-sorting-ii)
-    - [Subtitle #1](#subtitle-1-19)
+    - [Subtitle #1](#subtitle-1-16)
   - [Lecture 28, 10/29/21 (Wk10): Sorting (III)](#lecture-28-102921-wk10-sorting-iii)
-    - [Subtitle #1](#subtitle-1-20)
+    - [Subtitle #1](#subtitle-1-17)
   - [Lecture 29, 11/01/21 (Wk11): Balanced Search Structures](#lecture-29-110121-wk11-balanced-search-structures)
-    - [Subtitle #1](#subtitle-1-21)
+    - [Subtitle #1](#subtitle-1-18)
   - [Lecture 30, 11/03/21 (Wk11): Review (and it's my birthday!)](#lecture-30-110321-wk11-review-and-its-my-birthday)
-    - [Subtitle #1](#subtitle-1-22)
+    - [Subtitle #1](#subtitle-1-19)
   - [Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)](#lecture-31-110521-wk11-balanced-search-structures-ii)
-    - [Subtitle #1](#subtitle-1-23)
+    - [Subtitle #1](#subtitle-1-20)
   - [Lecture 32, 11/08/21 (Wk12): Git Internals](#lecture-32-110821-wk12-git-internals)
-    - [Subtitle #1](#subtitle-1-24)
+    - [Subtitle #1](#subtitle-1-21)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1-25)
+    - [Subtitle #1](#subtitle-1-22)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-26)
+    - [Subtitle #1](#subtitle-1-23)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-27)
+    - [Subtitle #1](#subtitle-1-24)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-28)
+    - [Subtitle #1](#subtitle-1-25)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-29)
+    - [Subtitle #1](#subtitle-1-26)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-30)
+    - [Subtitle #1](#subtitle-1-27)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-31)
+    - [Subtitle #1](#subtitle-1-28)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-32)
+    - [Subtitle #1](#subtitle-1-29)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -406,21 +416,98 @@ public class Foo {
 
 ## Lecture 8, 09/13/21 (Wk4): Object-oriented Mechanisms
 
-### Subtitle #1
+### Overloading
   
 -
+
+### Generic Data Structures
+  
+-
+
+### Primitive Values
+  
+- 
+
+### Autoboxing
+  
+-
+
+
+### Dynamic vs. Static types
+
+- Every value has a type≠its **dynamic type**
+- Every container (variable, component, parameter), literal, function call, and operation expression (e.g. x+y) has a type–its **static type**
+- Therefore, every **expression has a static type**.
+
+### Type Hierarchies
+
+- All types are subtypes of themselves (& that's for all primitive types)
+- Null's type is a subtype of all reference types
+- Reference types form a **type hierarchy**: some are subtypes of othersw
+- All reference types are subtypes of `Object`
+
+### The Basic Static Type Rule
+
+- Java is designed such that any expression of (static) type T always yields a value that "is a" T
+- Static types are "known to the compiler," because you declare them
+  - Ex: `String x;`
+
+### Overriding and Extension
+
+Casting is *clumsy*. 
+
+**Q:** If I know `Object` variable `x` contains a `String`, why can't I write `x.startsWith("this")`?
+
+**Answer:** `startsWith` is only defined on Strings, not on all `Objects`, so the compiler isn't sure it makes sense (unless you cast)
+
+### Extending a Class
+
+To say that class B is a direct subtype of class A, write
+
+```java
+class B extends A { ... }
+```
+
+By default, `class ... extends java.lang.Object`
+
+The subtype *inherits* all fields and methods of its direct superclass (and passes them along to any subtypes)
+
+In class B, you may override an instance method (not a static method), by providing a new definition with the same *signature* (name, return type, argument types)
 
 ## Lecture 9, 09/15/21 (Wk4): Interfaces and Abstract Classes
 
-### Subtitle #1
-  
--
+### Abstract Methods and Classes
+
+- Instance methods can be **abstract**: No body given; must be supplied in subtypes; can't make a `new` abstract objec
+- Regular classes can extend abstract ones to make them "less abstract" by overriding their abstract methods
+
+### Overriding Methods
+
+- Comments are often unhelpful on overriding methods since the comments are usually definined in the class from which the subclasses are derived
+- `@Override` notation is needed to indicate that a given method overrides something
+
+### Interfaces
+
+- An *interface*, in programming, is a *description* of generic interaction, specificially, a description of the functions or variables by which two things interact
+- Java uses the term to refer to a slight variant of an abstract class that (until Java 1.7) contains only abstract methods (and static constants)
+
 
 ## Lecture 10, 09/17/21 (Wk4): Interfaces and Abstract Classes
 
-### Subtitle #1
+### Specification Seen by Clients
   
--
+- The clients of a module (class, program, etc.) are the programs or methods that *use* that module's exported definitions
+- In Java, intention is that exported definitions are designated **public**
+- Clients are intended to rely on *specifications* (aka APIs), not code
+- **Syntactic specification:** method and constructor headers–syntax needed to use
+- **Semantic specification:** what they do. No formal notation, so use comments
+  - Semantic specification is a *contract*
+  - Conditions client must satisfy (*preconditions*)
+  - Promised results (*postconditions*)
+  - Design these to be *all the client needs*!
+  - Exceptions communicate errors, specifically failure to meet pre-conditions
+
+
 
 ## Lecture 11, 09/20/21 (Wk5): Examples: Comparable and Reader
 
