@@ -75,57 +75,60 @@
     - [Modular Arithmetic: Examples](#modular-arithmetic-examples)
     - [Negative Numbers](#negative-numbers)
   - [Lecture 15, 09/29/21 (Wk6): Integers](#lecture-15-092921-wk6-integers)
-    - [Subtitle #1](#subtitle-1)
+    - [Not updated](#not-updated)
   - [Lecture 16, 10/01/21 (Wk6): Complexity](#lecture-16-100121-wk6-complexity)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Not updated](#not-updated-1)
   - [Lecture 17, 10/04/21 (Wk7): Collections, Amortization](#lecture-17-100421-wk7-collections-amortization)
-    - [Subtitle #1](#subtitle-1-2)
-  - [Lecture 18, 10/06/21 (Wk7): Sequences, Some Design Patterns](#lecture-18-100621-wk7-sequences-some-design-patterns)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Not updated](#not-updated-2)
+  - [Lecture 18, 10/06/21 (Wk7): Sequences, Some Design](#lecture-18-100621-wk7-sequences-some-design)
+    - [Not updated](#not-updated-3)
   - [Lecture 19, 10/08/21 (Wk7): Sequences (II)](#lecture-19-100821-wk7-sequences-ii)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Not updated](#not-updated-4)
   - [Lecture 20, 10/11/21 (Wk8): Trees](#lecture-20-101121-wk8-trees)
-    - [Subtitle #1](#subtitle-1-5)
+    - [What are Trees?](#what-are-trees)
+    - [CS61B Style Trees](#cs61b-style-trees)
+    - [Tree Characteristics (I)](#tree-characteristics-i)
+    - [Tree Traversal](#tree-traversal)
   - [Lecture 21, 10/13/21 (Wk8): Tree searching](#lecture-21-101321-wk8-tree-searching)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 22, 10/03/21 (Wk8): Game trees](#lecture-22-100321-wk8-game-trees)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 23, 10/18/21 (Wk9): Priority Queues, Range Queries](#lecture-23-101821-wk9-priority-queues-range-queries)
-    - [Subtitle #1](#subtitle-1-8)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 24, 10/20/21 (Wk9): Hashing](#lecture-24-102021-wk9-hashing)
-    - [Subtitle #1](#subtitle-1-9)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
-    - [Subtitle #1](#subtitle-1-10)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
-    - [Subtitle #1](#subtitle-1-11)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 27, 10/27/21 (Wk10): Sorting (II)](#lecture-27-102721-wk10-sorting-ii)
-    - [Subtitle #1](#subtitle-1-12)
+    - [Subtitle #1](#subtitle-1-6)
   - [Lecture 28, 10/29/21 (Wk10): Sorting (III)](#lecture-28-102921-wk10-sorting-iii)
-    - [Subtitle #1](#subtitle-1-13)
+    - [Subtitle #1](#subtitle-1-7)
   - [Lecture 29, 11/01/21 (Wk11): Balanced Search Structures](#lecture-29-110121-wk11-balanced-search-structures)
-    - [Subtitle #1](#subtitle-1-14)
+    - [Subtitle #1](#subtitle-1-8)
   - [Lecture 30, 11/03/21 (Wk11): Review (and it's my birthday!)](#lecture-30-110321-wk11-review-and-its-my-birthday)
-    - [Subtitle #1](#subtitle-1-15)
+    - [Subtitle #1](#subtitle-1-9)
   - [Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)](#lecture-31-110521-wk11-balanced-search-structures-ii)
-    - [Subtitle #1](#subtitle-1-16)
+    - [Subtitle #1](#subtitle-1-10)
   - [Lecture 32, 11/08/21 (Wk12): Git Internals](#lecture-32-110821-wk12-git-internals)
-    - [Subtitle #1](#subtitle-1-17)
+    - [Subtitle #1](#subtitle-1-11)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1-18)
+    - [Subtitle #1](#subtitle-1-12)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-19)
+    - [Subtitle #1](#subtitle-1-13)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-20)
+    - [Subtitle #1](#subtitle-1-14)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-21)
+    - [Subtitle #1](#subtitle-1-15)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-22)
+    - [Subtitle #1](#subtitle-1-16)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-23)
+    - [Subtitle #1](#subtitle-1-17)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-24)
+    - [Subtitle #1](#subtitle-1-18)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-25)
+    - [Subtitle #1](#subtitle-1-19)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -594,43 +597,73 @@ a' + b'' = (a' + b') = a + b'
 ### Negative Numbers
 
 - Java's definition is the natural one for a machine that uses binary arithmetic
-- 
+
 
 ## Lecture 15, 09/29/21 (Wk6): Integers
 
-### Subtitle #1
+### Not updated
   
--
+To be added
 
 ## Lecture 16, 10/01/21 (Wk6): Complexity
 
-### Subtitle #1
+### Not updated
   
--
+To be added
 
 ## Lecture 17, 10/04/21 (Wk7): Collections, Amortization
 
-### Subtitle #1
+### Not updated
   
--
+To be added
 
-## Lecture 18, 10/06/21 (Wk7): Sequences, Some Design Patterns
+## Lecture 18, 10/06/21 (Wk7): Sequences, Some Design 
 
-### Subtitle #1
+### Not updated
   
--
+To be added
 
 ## Lecture 19, 10/08/21 (Wk7): Sequences (II)
 
-### Subtitle #1
+### Not updated
   
--
+To be added
 
 ## Lecture 20, 10/11/21 (Wk8): Trees
 
-### Subtitle #1
+### What are Trees?
   
--
+Trees have a recursive structure! They naturally represent recursively defined, hierarchical objects with more than one recursive subpart for each instance
+
+**Common examples:** expresisons, sentences
+
+Trees also describe search structures in which we recursively divide a set into multiple disjoint subsets
+
+### CS61B Style Trees
+
+- A tree is a set of **nodes** or (**vertices**), each of which has a **label** and one or more **child nodes**, such that no node descends (directly or indirectly) from itself. A node is the **parent** of its children
+- A tree is either empty or consists of a node containing a label value and an indexed sequence of zero or more children, each a positional tree
+- If every node has two positions, we have a **binary tree** and the children are its **left and right sub-trees**
+
+**Remember,** nodes are the parents of their non-empty children
+
+### Tree Characteristics (I)
+
+- The **root** of a tree is a non-empty node with no parent! Every node is the root of a sub(tree)
+- The **order, arity, or degree** of a node (tree) is its number (maximum number) of children
+- **Leaf** refers to a node that doesn't have any non-empty children
+- **Height** of a node in a tree is the largest distance to a leaf. A leaf has a *height of 0* and a non-empty tree's height is one more than the maximum height of its children.
+- The **depth** of a node in a tree is the distance to the root of that tree. That is, in a tree whose root is *R*, *R* itself has depth 0 in *R*. 
+
+### Tree Traversal
+
+As nodes are *(enumerated**, we say that they are *visited*
+
+Three basic orders for unumeration (+ some variations):
+- **Preorder:** visit node, traverse its children.
+- **Postorder:** traverse children, visit node.
+- **Inorder:** traverse first child, visit node, traverse second child
+(binary trees only).
 
 ## Lecture 21, 10/13/21 (Wk8): Tree searching
 
