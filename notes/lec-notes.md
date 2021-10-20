@@ -93,48 +93,49 @@
     - [Binary Search Tree (BST) Definitions](#binary-search-tree-bst-definitions)
     - [Binary Search Trees Explained](#binary-search-trees-explained)
     - [BST Operations: Search, Insert, & Delete](#bst-operations-search-insert--delete)
-      - [Searching](#searching)
+      - [Searching & Inserting](#searching--inserting)
+    - [Deleting](#deleting)
   - [Lecture 22, 10/15/21 (Wk8): Hashing](#lecture-22-101521-wk8-hashing)
     - [Integer Overflow & Hashcode Definition](#integer-overflow--hashcode-definition)
     - [Hash Tables](#hash-tables)
     - [Save Memory Using Separate Chaining](#save-memory-using-separate-chaining)
     - [Summary: Hash Tables](#summary-hash-tables)
   - [Lecture 23, 10/18/21 (Wk9): Game Trees](#lecture-23-101821-wk9-game-trees)
-    - [Subtitle #1](#subtitle-1)
+    - [Recommended Video](#recommended-video)
   - [Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries](#lecture-24-102021-wk9-priority-queues-range-queries)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Heaps](#heaps)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 27, 10/27/21 (Wk10): Sorting (II)](#lecture-27-102721-wk10-sorting-ii)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 28, 10/29/21 (Wk10): Sorting (III)](#lecture-28-102921-wk10-sorting-iii)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 29, 11/01/21 (Wk11): Balanced Search Structures](#lecture-29-110121-wk11-balanced-search-structures)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 30, 11/03/21 (Wk11): Review (and it's my birthday!)](#lecture-30-110321-wk11-review-and-its-my-birthday)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)](#lecture-31-110521-wk11-balanced-search-structures-ii)
-    - [Subtitle #1](#subtitle-1-8)
+    - [Subtitle #1](#subtitle-1-6)
   - [Lecture 32, 11/08/21 (Wk12): Git Internals](#lecture-32-110821-wk12-git-internals)
-    - [Subtitle #1](#subtitle-1-9)
+    - [Subtitle #1](#subtitle-1-7)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1-10)
+    - [Subtitle #1](#subtitle-1-8)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-11)
+    - [Subtitle #1](#subtitle-1-9)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-12)
+    - [Subtitle #1](#subtitle-1-10)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-13)
+    - [Subtitle #1](#subtitle-1-11)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-14)
+    - [Subtitle #1](#subtitle-1-12)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-15)
+    - [Subtitle #1](#subtitle-1-13)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-16)
+    - [Subtitle #1](#subtitle-1-14)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-17)
+    - [Subtitle #1](#subtitle-1-15)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -233,7 +234,6 @@ public class IntList {
 - `L.tail.head += 1;` the value of the head of the end of L, 42, is now 43
 - Now `Q.head == 43` and `L.tail.head == 43`
 
-
 ### Destructive vs. Non-destructive
 
 **Side note:** Instance variables should always be private!
@@ -310,7 +310,6 @@ The logic:
   - stop doing this once you've hit the index in the list where you want to insert a value
 - `arr[k] = 'new element that you want to insert'`
 
-
 ### Java Shortcut
 
 Can write just `arraycopy` by including at the top of the
@@ -328,7 +327,6 @@ A[0] = new int[] {2, 3, 4, 5};
 A[1] = new int[] {4, 9, 16, 25};
 A[2] = new int[] {8, 27, 64, 125};
 ```
-
 
 ## Lecture 6, 09/08/21 (Wk3): Developing a Sort, Unit Testing
 
@@ -368,7 +366,6 @@ public static void main (String... args) {
   ucb.junit.textui.runClasses(SortTesting.class);
 }
 ```
-
 
 ## Lecture 7, 09/10/21 (Wk3): Object-Based Programming
 
@@ -428,7 +425,6 @@ public class Foo {
 ```
 
 **Note:** multiple *overloaded* constructors are possible, and they can use each other (although the syntax is odd)
-
 
 ## Lecture 8, 09/13/21 (Wk4): Object-oriented Mechanisms
 
@@ -490,7 +486,6 @@ In class B, you may override an instance method (not a static method), by provid
 - An *interface*, in programming, is a *description* of generic interaction, specificially, a description of the functions or variables by which two things interact
 - Java uses the term to refer to a slight variant of an abstract class that (until Java 1.7) contains only abstract methods (and static constants)
 
-
 ## Lecture 10, 09/17/21 (Wk4): Interfaces and Abstract Classes
 
 ### Specification Seen by Clients
@@ -535,14 +530,12 @@ public interface Comparable<T> {
 ### Reader (relevant for HW 3)
 
 - Java class `java.io.reader` abstracts *sources of characters*
-- 
-
 
 ## Lecture 12, 09/22/21 (Wk5): Additional OOP Details, Exceptions
 
 ### Package
   
-TBD
+No notes taken
 
 ## Lecture 13, 09/24/21 (Wk5): Packages, Access, Loose Ends
 
@@ -707,7 +700,7 @@ One of the most important things to remember for BST's is that, *in a rooted bin
 
 ### BST Operations: Search, Insert, & Delete
 
-#### Searching
+#### Searching & Inserting
 
 - if searchKey < T.key, search T.left
 - if searchKey > T.key, search T.right
@@ -729,7 +722,17 @@ static BST find(BST T, Key sk) {
 
 **What's the runtime to create a search on a "bushy" (looks like a normal tree but upside down) BST in the worst case?** Theta(log N). Bushy BSTs are extremely fast?
 
-- The insert and delete methods follow the same logic
+The insert method follows the same logic, ecept that we now insert whenever BST `T` is null! The delete method is a bit more difficult.
+
+### Deleting
+
+There are three cases when you're deleting nodes:
+- **Case 1:** Deletion key has no children
+  - In this case, just delete the node by removing its parent pointer
+- **Case 2:** Deletion key has one child
+  - Make the parent node of the deleted node point to the child node of the deleted node
+- **Case 3:** Deletion key has two children
+  - 
 
 ## Lecture 22, 10/15/21 (Wk8): Hashing
 
@@ -772,15 +775,15 @@ data -> hash function -> hash code -> reduce (often with %) -> index
 
 ## Lecture 23, 10/18/21 (Wk9): Game Trees
 
-### Subtitle #1
-  
--
+### Recommended Video
+
+[This](https://www.youtube.com/watch?v=l-hh51ncgDI) video was recommended by my CSM mentor. It contains all of the relevant logic behind game trees. Shout out to Kyle Zhang!
 
 ## Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries
 
-### Subtitle #1
+### Heaps
   
--
+- TBD
 
 ## Lecture 25, 10/22/21 (Wk9): Generics
 
