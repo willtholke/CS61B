@@ -75,27 +75,30 @@
     - [Modular Arithmetic: Examples](#modular-arithmetic-examples)
     - [Negative Numbers](#negative-numbers)
   - [Lecture 15, 09/29/21 (Wk6): Integers](#lecture-15-092921-wk6-integers)
-    - [Not updated](#not-updated)
+    - [Bit Manipulation](#bit-manipulation)
   - [Lecture 16, 10/01/21 (Wk6): Complexity](#lecture-16-100121-wk6-complexity)
-    - [Not updated](#not-updated-1)
+    - [Runtime](#runtime)
   - [Lecture 17, 10/04/21 (Wk7): Collections, Amortization](#lecture-17-100421-wk7-collections-amortization)
-    - [Not updated](#not-updated-2)
+    - [Not updated](#not-updated)
   - [Lecture 18, 10/06/21 (Wk7): Sequences, Some Design](#lecture-18-100621-wk7-sequences-some-design)
-    - [Not updated](#not-updated-3)
+    - [Not updated](#not-updated-1)
   - [Lecture 19, 10/08/21 (Wk7): Sequences (II)](#lecture-19-100821-wk7-sequences-ii)
-    - [Not updated](#not-updated-4)
+    - [Not updated](#not-updated-2)
   - [Lecture 20, 10/11/21 (Wk8): Trees](#lecture-20-101121-wk8-trees)
     - [What are Trees?](#what-are-trees)
     - [CS61B Style Trees](#cs61b-style-trees)
     - [Tree Characteristics (I)](#tree-characteristics-i)
     - [Tree Traversal](#tree-traversal)
   - [Lecture 21, 10/13/21 (Wk8): Tree searching](#lecture-21-101321-wk8-tree-searching)
-    - [Point-region (PR) Quadtrees](#point-region-pr-quadtrees)
+    - [Binary Search Tree (BST) Definitions](#binary-search-tree-bst-definitions)
+    - [Binary Search Trees Explained](#binary-search-trees-explained)
+    - [BST Operations: Search, Insert, & Delete](#bst-operations-search-insert--delete)
+      - [Searching](#searching)
   - [Lecture 22, 10/15/21 (Wk8): Hashing](#lecture-22-101521-wk8-hashing)
     - [Subtitle #1](#subtitle-1)
-  - [Lecture 23, 10/18/21 (Wk9): Priority Queues, Range Queries](#lecture-23-101821-wk9-priority-queues-range-queries)
+  - [Lecture 23, 10/18/21 (Wk9): Game Trees](#lecture-23-101821-wk9-game-trees)
     - [Subtitle #1](#subtitle-1-1)
-  - [Lecture 24, 10/20/21 (Wk9): Hashing](#lecture-24-102021-wk9-hashing)
+  - [Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries](#lecture-24-102021-wk9-priority-queues-range-queries)
     - [Subtitle #1](#subtitle-1-2)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
     - [Subtitle #1](#subtitle-1-3)
@@ -601,33 +604,33 @@ a' + b'' = (a' + b') = a + b'
 
 ## Lecture 15, 09/29/21 (Wk6): Integers
 
-### Not updated
+### Bit Manipulation
   
-To be added
+No notes taken
 
 ## Lecture 16, 10/01/21 (Wk6): Complexity
 
-### Not updated
+### Runtime
   
-To be added
+No notes taken
 
 ## Lecture 17, 10/04/21 (Wk7): Collections, Amortization
 
 ### Not updated
-  
-To be added
+
+No notes taken
 
 ## Lecture 18, 10/06/21 (Wk7): Sequences, Some Design 
 
 ### Not updated
   
-To be added
+No notes taken
 
 ## Lecture 19, 10/08/21 (Wk7): Sequences (II)
 
 ### Not updated
   
-To be added
+No notes taken
 
 ## Lecture 20, 10/11/21 (Wk8): Trees
 
@@ -667,27 +670,78 @@ Three basic orders for unumeration (+ some variations):
 
 ## Lecture 21, 10/13/21 (Wk8): Tree searching
 
-### Point-region (PR) Quadtrees
+### Binary Search Tree (BST) Definitions
+
+**A tree consists of:**
+- A set of nodes
+- A set of edges that connect those nodes
+  - *Howver, there is one constraint*; there is exactly one path between any two nodes
   
-- If we use a Quadtree to track moving objects, it may be useful to be able to *delete* items from a tree: when an object moves, the subtree that it goes in may change
-- A Quadtree is a rectangle representing some portion of space, and either contains:
-  - Zero up to a small number of items
-  - Four rectangles, one for each of the four quadrants of the original rectangle that was there
+In a rooted tree, we call one node the **root**:
+- Every node `N` except the root has exactly one parent, defined as the first node on the path from N to the root
+- The root is at the top of the tree (not like a real tree)
+- A node with no child is called a leaf
+
+One of the most important things to remember for BST's is that, *in a rooted binary tree, every node has either 0, 1, or 2 children (subtrees)*.
+
+### Binary Search Trees Explained
+
+- A binary search tree is a rooted binary tree with the BST property
+- **BST Property:** for every node `X` in the tree,
+  - every key in the *left subtree* is *less* than `X`'s key
+  - every key in the *right subtree* is *greater* than `X`'s key
+
+```py
+# Example of a valid BST
+          "dog"
+          /   \
+         /     \
+      "bag"   "flat"
+      /   \    /   \
+     /    |    |    \
+  "alf" "cat" "elf" "glut"
+  ```
+
+### BST Operations: Search, Insert, & Delete
+
+#### Searching
+
+- if searchKey < T.key, search T.left
+- if searchKey > T.key, search T.right
+
+```java
+static BST find(BST T, Key sk) {
+  if (T == null) { // if the list is empty
+    return null;
+  }
+  if (sk.equals(T.key)) { // if the search key == the key of T
+    return T;
+  } else if (sk < T.key) {
+    return find(T.left, sk); // find the result on the left
+  } else {
+    return find(T.right, sk); // find the result on the right
+  }
+}
+```
+
+**What's the runtime to create a search on a "bushy" (looks like a normal tree but upside down) BST in the worst case?** Theta(log N). Bushy BSTs are extremely fast?
+
+Insert & Delete TBD
 
 ## Lecture 22, 10/15/21 (Wk8): Hashing
 
 ### Subtitle #1
   
-- 
+- To be updated
 
 
-## Lecture 23, 10/18/21 (Wk9): Priority Queues, Range Queries
+## Lecture 23, 10/18/21 (Wk9): Game Trees
 
 ### Subtitle #1
   
 -
 
-## Lecture 24, 10/20/21 (Wk9): Hashing
+## Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries
 
 ### Subtitle #1
   
