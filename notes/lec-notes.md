@@ -110,6 +110,8 @@
     - [Heap Operations: Insertion](#heap-operations-insertion)
     - [Heap Operation: Remove Smallest](#heap-operation-remove-smallest)
     - [Runtime](#runtime-2)
+    - [Min/Max Priority Queues](#minmax-priority-queues)
+    - [Heap Representation as Arrays](#heap-representation-as-arrays)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
     - [Subtitle #1](#subtitle-1)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
@@ -844,6 +846,27 @@ Heaps maintain a **complete** tree, meaning that the runtime is theta(log N) whe
 **Remove Smallest:** in the rowst case, we move the last node to the root, and must bubble down to the lowest level, hence the runtime theta(log N)
 
 **Get Smallest:** we return the root node, taking constant time theta(1)
+
+### Min/Max Priority Queues
+
+The **priority queue** is an abstract data type that expands beyond normal first-in-first-out (FIFO) and last-in-first-out (LIFO) functionality
+- In a *max priority queue*, elements with larger priority values will have higher priority
+- In a *min priority queue*, elements with smaller priority values will have higher priorityw
+
+### Heap Representation as Arrays
+
+**Binary trees can be represetned as arrays that have the following properties:**
+- The root of the tree will be in position one of the array, meaning that the value of the array at the 0th index will be `null` (this is usually done in the constructor)
+- In the following examples, by position, we mean *index*
+- The *left child* of a node at position `i` is at position `2i`
+- The *right child* of a node at position `i` is at positions `2i + 1`
+- The parent of a node at positions `i` is at positions `i/2` rounding down
+
+Use the above rules to confirm the the expmple below is correct.
+
+**Example:**
+
+<img src="images/../../images/lec-24-3.png">
 
 ## Lecture 25, 10/22/21 (Wk9): Generics
 
