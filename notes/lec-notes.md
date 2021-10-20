@@ -95,43 +95,46 @@
     - [BST Operations: Search, Insert, & Delete](#bst-operations-search-insert--delete)
       - [Searching](#searching)
   - [Lecture 22, 10/15/21 (Wk8): Hashing](#lecture-22-101521-wk8-hashing)
-    - [Subtitle #1](#subtitle-1)
+    - [Integer Overflow & Hashcode Definition](#integer-overflow--hashcode-definition)
+    - [Hash Tables](#hash-tables)
+    - [Save Memory Using Separate Chaining](#save-memory-using-separate-chaining)
+    - [Summary: Hash Tables](#summary-hash-tables)
   - [Lecture 23, 10/18/21 (Wk9): Game Trees](#lecture-23-101821-wk9-game-trees)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries](#lecture-24-102021-wk9-priority-queues-range-queries)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 27, 10/27/21 (Wk10): Sorting (II)](#lecture-27-102721-wk10-sorting-ii)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 28, 10/29/21 (Wk10): Sorting (III)](#lecture-28-102921-wk10-sorting-iii)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 29, 11/01/21 (Wk11): Balanced Search Structures](#lecture-29-110121-wk11-balanced-search-structures)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1-6)
   - [Lecture 30, 11/03/21 (Wk11): Review (and it's my birthday!)](#lecture-30-110321-wk11-review-and-its-my-birthday)
-    - [Subtitle #1](#subtitle-1-8)
+    - [Subtitle #1](#subtitle-1-7)
   - [Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)](#lecture-31-110521-wk11-balanced-search-structures-ii)
-    - [Subtitle #1](#subtitle-1-9)
+    - [Subtitle #1](#subtitle-1-8)
   - [Lecture 32, 11/08/21 (Wk12): Git Internals](#lecture-32-110821-wk12-git-internals)
-    - [Subtitle #1](#subtitle-1-10)
+    - [Subtitle #1](#subtitle-1-9)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1-11)
+    - [Subtitle #1](#subtitle-1-10)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-12)
+    - [Subtitle #1](#subtitle-1-11)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-13)
+    - [Subtitle #1](#subtitle-1-12)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-14)
+    - [Subtitle #1](#subtitle-1-13)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-15)
+    - [Subtitle #1](#subtitle-1-14)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-16)
+    - [Subtitle #1](#subtitle-1-15)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-17)
+    - [Subtitle #1](#subtitle-1-16)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-18)
+    - [Subtitle #1](#subtitle-1-17)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -726,14 +729,46 @@ static BST find(BST T, Key sk) {
 
 **What's the runtime to create a search on a "bushy" (looks like a normal tree but upside down) BST in the worst case?** Theta(log N). Bushy BSTs are extremely fast?
 
-Insert & Delete TBD
+- The insert and delete methods follow the same logic
 
 ## Lecture 22, 10/15/21 (Wk8): Hashing
 
-### Subtitle #1
-  
-- To be updated
+### Integer Overflow & Hashcode Definition
 
+In Java, the biggest posisble integer is 2,147,483,647. If you go over this limit, you overflow, starting back at the smallest integer `-2,147,483,648`
+
+**Hashcode** projects a value from a set with many (or even an infinite number of) members to a value from a set with a fixed number of (fewer) members
+
+Collisions are inevitble due to integer overflow
+
+### Hash Tables
+
+Supposed that `N` items have the same numerical representation `h`:
+- Instead of storing `true` in a position `h`, we store a "bucket" of these `N` items at position `h`
+- The bucket can be any sort of collection in which you itearate over and look for things
+
+The performance of one of these hash tables has, instead of constant time operations, `theta(Q)` operations where `Q` is the length of the longest link
+
+### Save Memory Using Separate Chaining
+
+If we use the 10 buckets on  he right, where should our five items go?
+- Well, we'd want to put them in the bucket equal to `hashCode % sizeOfArrayListofBuckets`
+- E.g. `hashCode % 10` for an array list of buckets of length 10
+- This is effectively the same as wrapping the hashcode so it's always within the length of the list
+- The upside in this method is that we only need the last digit to wrap, but the downside is that we'll have much longer collections (can be lists) in each bucket
+
+### Summary: Hash Tables
+
+- Data is converted by a **hash function** into an integer represeitation called a **hash code**
+- The **hash code** is then **reduced** to a valid *index*, usually using the modulus operator, e.g. `2348762878 % 10 = 8`
+  
+The process goes like this:
+```
+data -> hash function -> hash code -> reduce (often with %) -> index
+```
+- **BEWARE** that we can't use `%` to handle negative hash codes
+
+- *If we had a had table with 5 buckets, what's the order of growth of Q with respect to N?* It's theta(N)
 
 ## Lecture 23, 10/18/21 (Wk9): Game Trees
 
