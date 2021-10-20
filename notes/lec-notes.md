@@ -79,11 +79,11 @@
   - [Lecture 16, 10/01/21 (Wk6): Complexity](#lecture-16-100121-wk6-complexity)
     - [Runtime](#runtime)
   - [Lecture 17, 10/04/21 (Wk7): Collections, Amortization](#lecture-17-100421-wk7-collections-amortization)
-    - [Not updated](#not-updated)
+    - [Data Types in the Abstract](#data-types-in-the-abstract)
   - [Lecture 18, 10/06/21 (Wk7): Sequences, Some Design](#lecture-18-100621-wk7-sequences-some-design)
-    - [Not updated](#not-updated-1)
+    - [Views, Maps, & More](#views-maps--more)
   - [Lecture 19, 10/08/21 (Wk7): Sequences (II)](#lecture-19-100821-wk7-sequences-ii)
-    - [Not updated](#not-updated-2)
+    - [More Assorted Topics](#more-assorted-topics)
   - [Lecture 20, 10/11/21 (Wk8): Trees](#lecture-20-101121-wk8-trees)
     - [What are Trees?](#what-are-trees)
     - [CS61B Style Trees](#cs61b-style-trees)
@@ -95,6 +95,7 @@
     - [BST Operations: Search, Insert, & Delete](#bst-operations-search-insert--delete)
       - [Searching & Inserting](#searching--inserting)
     - [Deleting](#deleting)
+    - [Runtime](#runtime-1)
   - [Lecture 22, 10/15/21 (Wk8): Hashing](#lecture-22-101521-wk8-hashing)
     - [Integer Overflow & Hashcode Definition](#integer-overflow--hashcode-definition)
     - [Hash Tables](#hash-tables)
@@ -103,7 +104,12 @@
   - [Lecture 23, 10/18/21 (Wk9): Game Trees](#lecture-23-101821-wk9-game-trees)
     - [Recommended Video](#recommended-video)
   - [Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries](#lecture-24-102021-wk9-priority-queues-range-queries)
-    - [Heaps](#heaps)
+    - [Resources](#resources)
+    - [Binary min-heaps](#binary-min-heaps)
+    - [Heap Operations Overview](#heap-operations-overview)
+    - [Heap Operations: Insertion](#heap-operations-insertion)
+    - [Heap Operation: Remove Smallest](#heap-operation-remove-smallest)
+    - [Runtime](#runtime-2)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
     - [Subtitle #1](#subtitle-1)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
@@ -597,36 +603,35 @@ a' + b'' = (a' + b') = a + b'
 
 - Java's definition is the natural one for a machine that uses binary arithmetic
 
-
 ## Lecture 15, 09/29/21 (Wk6): Integers
 
 ### Bit Manipulation
   
-No notes taken
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 15](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect14.pdf). Note that the slides say "Lecture 14."
 
 ## Lecture 16, 10/01/21 (Wk6): Complexity
 
 ### Runtime
   
-No notes taken
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 16](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect16.pdf).
 
 ## Lecture 17, 10/04/21 (Wk7): Collections, Amortization
 
-### Not updated
+### Data Types in the Abstract
 
-No notes taken
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 17](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect17.pdf).
 
 ## Lecture 18, 10/06/21 (Wk7): Sequences, Some Design 
 
-### Not updated
+### Views, Maps, & More
   
-No notes taken
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 18](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect18.pdf).
 
 ## Lecture 19, 10/08/21 (Wk7): Sequences (II)
 
-### Not updated
+### More Assorted Topics
   
-No notes taken
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 19](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect18.pdf).
 
 ## Lecture 20, 10/11/21 (Wk8): Trees
 
@@ -731,8 +736,19 @@ There are three cases when you're deleting nodes:
   - In this case, just delete the node by removing its parent pointer
 - **Case 2:** Deletion key has one child
   - Make the parent node of the deleted node point to the child node of the deleted node
-- **Case 3:** Deletion key has two children
-  - 
+- **Case 3:** Deletion key has two children (the Hibbard deletion)
+  - If a node has two children, something is going to need to replace that node
+  - Must be > than everything in the left subtree
+  - Must be < than everything in the right subtree
+    - Choose either predecessor or successor (they can never have two children)
+  - Josh Hug has a great explanation of this [here](https://www.youtube.com/watch?v=vPzB6svl4rc) @ 2:30 in the video
+
+### Runtime
+
+**Find:** Theta(H); to find a key, we may have to compare our key with all nodes along the longest path from foot to leaf
+**Insert:** Theta(H); we may have to compare our inserted key with all nodes along the longest path from root to leaf, eventually inserting the node underneath that leaf
+**Delete:** Theta(H); we find a predecessor or successor, set the deleted node to it, delete the prececessor or successor; takes theta(H) in the worst case but Theta(1) for every time we swap with the root and delete the predecessor or successor
+
 
 ## Lecture 22, 10/15/21 (Wk8): Hashing
 
@@ -781,9 +797,53 @@ data -> hash function -> hash code -> reduce (often with %) -> index
 
 ## Lecture 24, 10/20/21 (Wk9): Priority Queues, Range Queries
 
-### Heaps
-  
-- TBD
+### Resources 
+
+- [CSM Worksheet: More Trees and Heaps](https://csm-web-resource-aggregation.s3.amazonaws.com/resources/CS61B/Week_9_More_Trees_and_Heaps.pdf)
+- [CSM Worksheet: Walthrough Playlist](https://www.youtube.com/watch?v=L_ub_oCLOEE&list=PLN303KpCz_KQIeiVYyi4q-byvCV5FcySh&index=1)
+- [Associated Josh Hug Lecture Playlist](https://www.youtube.com/playlist?list=PL8FaHk7qbOD50LnOXTSpYgnVJQTIVFsmI)
+
+### Binary min-heaps
+
+- **Binary min-heap** - binary tree that is *complete* and obeys *min-heap property*
+  - *Min-heap*: every node is less than or equal to both of its children
+  - *Complete*: missing items only at the bottom level (if any), all nodes are as far left as possible; every node must have two children unless it's at the bottom level
+    - Intuitively, if a binary tree is *incomplete*, not all of its nodes are as far left as possible AND/OR a node that's not at the bottom level does not have two children
+- There's also something called *max-heap property*, which is when every node is greater than or equal to both of its children
+
+**How could we design `getSmallest()`? In other words, what's the smallest node value in a binary min-heap?** It will always be the root of the heap.
+
+<img src="images/../../images/lec-24-1.png">
+
+### Heap Operations Overview
+
+- `getSmallest()` - return the item in the root node
+- `add(x)` - place the new node in the last position, and promote as high as possible
+- `removeSmallest()` - assassinate the root note, promote the rightmost person in the heap to president. Then, demote repeatedly, always taking the 'better' successor
+
+### Heap Operations: Insertion
+
+- **Add the node to the end of the heap** temporarily
+- **Reheapify** by bubbling (or "swimming") up the node until it is in the correct location
+
+<img src="images/../../images/lec-24-0.png">
+
+### Heap Operation: Remove Smallest
+
+- **Move the last node** (bottommost and rightmost) **into the root**
+- **Reheapify** by bubbling (or "sinking") down the node, swapping with the *smallest* child node until it is in the correct location.
+
+<img src="images/../../images/lec-24-2.png">
+
+### Runtime
+
+Heaps maintain a **complete** tree, meaning that the runtime is theta(log N) where `N` is the number of items in the heap
+
+**Insertion:** in the worst case, we must bubble up until reaching the root, meaning that there will be a runtime of theta(log N)
+
+**Remove Smallest:** in the rowst case, we move the last node to the root, and must bubble down to the lowest level, hence the runtime theta(log N)
+
+**Get Smallest:** we return the root node, taking constant time theta(1)
 
 ## Lecture 25, 10/22/21 (Wk9): Generics
 
