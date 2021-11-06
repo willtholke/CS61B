@@ -113,37 +113,37 @@
     - [Min/Max Priority Queues](#minmax-priority-queues)
     - [Heap Representation as Arrays](#heap-representation-as-arrays)
   - [Lecture 25, 10/22/21 (Wk9): Generics](#lecture-25-102221-wk9-generics)
-    - [Subtitle #1](#subtitle-1)
+    - [Generics](#generics)
   - [Lecture 26, 10/25/21 (Wk10): Sorting](#lecture-26-102521-wk10-sorting)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Sorting](#sorting)
   - [Lecture 27, 10/27/21 (Wk10): Sorting (II)](#lecture-27-102721-wk10-sorting-ii)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Sorting (II)](#sorting-ii)
   - [Lecture 28, 10/29/21 (Wk10): Sorting (III)](#lecture-28-102921-wk10-sorting-iii)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Sorting (III)](#sorting-iii)
   - [Lecture 29, 11/01/21 (Wk11): Balanced Search Structures](#lecture-29-110121-wk11-balanced-search-structures)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Balanced Search](#balanced-search)
   - [Lecture 30, 11/03/21 (Wk11): Review (and it's my birthday!)](#lecture-30-110321-wk11-review-and-its-my-birthday)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Review](#review)
   - [Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)](#lecture-31-110521-wk11-balanced-search-structures-ii)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Balanced Search (II)](#balanced-search-ii)
   - [Lecture 32, 11/08/21 (Wk12): Git Internals](#lecture-32-110821-wk12-git-internals)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1-8)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-9)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-10)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-11)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-12)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-13)
+    - [Subtitle #1](#subtitle-1-6)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-14)
+    - [Subtitle #1](#subtitle-1-7)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-15)
+    - [Subtitle #1](#subtitle-1-8)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -870,45 +870,45 @@ Use the above rules to confirm the the expmple below is correct.
 
 ## Lecture 25, 10/22/21 (Wk9): Generics
 
-### Subtitle #1
-  
--
+### Generics
+
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 25](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect25.pdf). 
 
 ## Lecture 26, 10/25/21 (Wk10): Sorting
 
-### Subtitle #1
+### Sorting
   
--
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 26](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect26.pdf). 
 
 ## Lecture 27, 10/27/21 (Wk10): Sorting (II)
 
-### Subtitle #1
+### Sorting (II)
   
--
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 27](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect27.pdf).
 
 ## Lecture 28, 10/29/21 (Wk10): Sorting (III)
 
-### Subtitle #1
+### Sorting (III)
   
--
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 28](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect28.pdf).
 
 ## Lecture 29, 11/01/21 (Wk11): Balanced Search Structures
 
-### Subtitle #1
+### Balanced Search
   
--
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 29](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect29.pdf).
 
 ## Lecture 30, 11/03/21 (Wk11): Review (and it's my birthday!)
 
-### Subtitle #1
-  
--
+### Review
+
+No notes taken.
 
 ## Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)
 
-### Subtitle #1
+### Balanced Search (II)
   
--
+No notes taken. Please refer to Hilfinger's [lecture slides for lecture 30](https://inst.eecs.berkeley.edu/~cs61b/fa21/materials/lectures/lect31.pdf).
 
 ## Lecture 32, 11/08/21 (Wk12): Git Internals
 
