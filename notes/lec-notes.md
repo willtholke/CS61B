@@ -138,21 +138,26 @@
     - [SHA1](#sha1)
     - [Low-Level Blob Management](#low-level-blob-management)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1)
+    - [Why Graphs?](#why-graphs)
+    - [Terminology](#terminology)
+    - [Trees are Graphs](#trees-are-graphs)
+    - [Representation](#representation)
+    - [Traversing a Graph](#traversing-a-graph)
+    - [Examples](#examples)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1-6)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -1015,27 +1020,82 @@ and you can look at them (uncompressed) with
 
 ## Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals
 
-### Subtitle #1
+### Why Graphs?
   
--
+Express non-hierarchically related items
+- **Networks:** pipelines, roads, assignment problems
+- **Representing processes:** flow charts, Markov models
+- **Representing partial orderings:** PERT charts, makefiles
+
+### Terminology
+
+- A **graph** consists of
+  - A set of **nodes** (aka **vertices**)
+  - A set of **edges**: pairs of nodes
+  - Nodes with an edge between them are *adjacent*
+  - Depending on the problem, nodes or edges may have **labels** (aka **weights**)
+- Typically call node set `V = {v_0, ...}`, and edge set `E`.
+- If the edges have an order (first, second), they are *directed edges*, and we have a *directed graph (digraph)*, otherwise an *undirected graph*
+- Edges are *incident* to their nodes
+- Directed edges *exit* one node and *enter* the next
+- A **cycle** is a path without repeated edges leading from a node back to itself
+- A graph is *cyclic* if it has a cycle, else *acyclic*
+  - **Directed Acyclic Graph (DAG)**
+
+**Examples:**
+
+<img src="images/../../images/lec-33-3.png">
+
+### Trees are Graphs
+
+- A graph is *connected* if there is a (possibly directed) path between every pair of nodes
+  - If one node of the pair is *reachable* from the other
+
+A **free tree** is a connected, acyclic, undirected graph (i.e. we're free to pick the root)
+
+<img src="images/../../images/lec-33-4.png">
+
+### Representation
+
+- *Edge list representation*: each node contains some kind of list (e.g. linked list or array) of its successors (and possibly predecessors)
+
+<img src="images/../../images/lec-33-0.png">
+
+- *Edge sets*: collection of all edges. For the graph above:
+  
+<img src="images/../../images/lec-33-1.png">
+
+- *Adjacency matrix*: represent connection with matrix entry
+
+<img src="images/../../images/lec-33-2.png">
+
+### Traversing a Graph
+
+- We can't quite use recursion because of the cycles (in acyclic graphs, we can get combinatoral explosions)
+- Treat 0 as the root and ddo recursive traversal down the two edges out of each node: `theta(2^N)` operations
+
+### Examples
+
+Examples of *recursive depth-first traversal*, *topological sorting*, *depth-first search*, the *general graph traversal algorithm*, and *Dijkstra's algorithm* can be found towards the end of the slides for [Fall 2019, Lecture 33](https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect33.pdf).
+
 
 ## Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find
 
 ### Subtitle #1
   
--
+https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect34.pdf
 
 ## Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences
 
 ### Subtitle #1
   
--
+https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect32.pdf
 
 ## Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types
 
 ### Subtitle #1
   
--
+https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect36.pdf
 
 ## Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection
 
