@@ -127,23 +127,32 @@
   - [Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)](#lecture-31-110521-wk11-balanced-search-structures-ii)
     - [Balanced Search (II)](#balanced-search-ii)
   - [Lecture 32, 11/08/21 (Wk12): Git Internals](#lecture-32-110821-wk12-git-internals)
-    - [Subtitle #1](#subtitle-1)
+    - [Overview of Git](#overview-of-git)
+    - [History of Git](#history-of-git)
+    - [Major User-Level Features](#major-user-level-features)
+    - [Conceptual Structure](#conceptual-structure)
+    - [Major User-Level Features (part 2)](#major-user-level-features-part-2)
+    - [Internals](#internals)
+    - [Content-Addressable File System](#content-addressable-file-system)
+    - [Broken Idea for Implementing the CAF System](#broken-idea-for-implementing-the-caf-system)
+    - [SHA1](#sha1)
+    - [Low-Level Blob Management](#low-level-blob-management)
   - [Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals](#lecture-33-111021-wk12-graphs-introduction-traversals)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Subtitle #1](#subtitle-1-4)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1-5)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-7)
+    - [Subtitle #1](#subtitle-1-6)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-8)
+    - [Subtitle #1](#subtitle-1-7)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -902,7 +911,7 @@ No notes taken. Please refer to Hilfinger's [lecture slides for lecture 29](http
 
 ### Review
 
-No notes taken.
+Good luck on the midterm!
 
 ## Lecture 31, 11/05/21 (Wk11): Balanced Search Structures (II)
 
@@ -912,9 +921,97 @@ No notes taken. Please refer to Hilfinger's [lecture slides for lecture 30](http
 
 ## Lecture 32, 11/08/21 (Wk12): Git Internals
 
-### Subtitle #1
+### Overview of Git
   
--
+- **Git** is a distributed version-control system, the most popular one currently being used
+- Git stores snapshots (**versions**) of the files and directory structure of a project, keeping track of their relationships, authors, dates, and **log messages**
+- It is **distributed** in that there can be many copies of a given repository, each supporting independent development, with machinery to transmit and reconcile versions between repositories
+- Its operation is extremely fast
+
+### History of Git
+
+- Developed by Linus Torvalds (and others in the Linux community) after Bitkeeper withdrew the free version
+- Took about 2-3 months to create, in time for the 1.6.12 Linux kernel release in June, 2005
+- Git is British-English slang, meaning "unpleasant person"
+
+### Major User-Level Features
+
+- Abstraction is of a graph of versions or snapshots (called **commits*)
+- The graph structure reflects ancestry: which versions came from which
+- Each commit contains
+  - A directory tree of files (like a Unix directory)
+  - Information about who committed and when
+  - Log message
+  - Pointers to commit (or commits, if there was a merge) from which the commit was derived
+
+### Conceptual Structure
+
+- Main internal components consist of four types of **objects**:
+  - **Blobs**: hold contents of files
+  - **Trees**: directory structures of files
+  - **Commits**: contain references ot trees and additional info (comitter, date, log message, etc.)
+  - **Tags**: references to commits or other objects, with additional information, intended to identify releases, other important versions, etc.
+
+### Major User-Level Features (part 2)
+
+- Each commit has a unique name
+- Transmitting a commit from repository A to repository B requires only the transmission of those objects (files or directory trees) that B does not yet have
+  - Hence the reason for the message `Everything up-to-date.`
+  - "Which objects don't you have" problem is caused by the difficulty in only transferring objects that are missing in the target repository
+- Repositories maintain *named* **branches**, identifiers of particular commits that are updated to keep track of the most recent commits in various lines of development
+- **Tags** are just named pointers to particular commits. Usually not changed, which is different than branches
+
+### Internals
+
+- Each Git repository is contained in a directory
+  - Can either be a bare directory (just a collections of objects and metadata) or included as part of a working directory
+- To save space, data in files is compressed
+- Git can garbage-collect the objects from time to time to save additional space
+
+### Content-Addressable File System
+
+- Could use some way of naming objects that is universal
+  - *We use the names, then, as pointers*
+- Solves the "Which objects don't you have?" problem mentioned 
+- The only invariant thing about some object is *its contents*, but we can't use the contents as the name
+
+### Broken Idea for Implementing the CAF System
+
+- **Idea:** Use a hash of the contents as the address
+- **Problem:** That doesn't work
+- **Brilliant Idea:** Use it anyway
+
+**Cryptographic Hash Functions** are designed to withstand cryptoanalytic attacks, and should have
+  - *Pre-image resistance*: given `h = f(m)`, should be computationally infeasible to find such a message `m`
+  - *Second pre-image resistance*: given message `m1`, should be infeasible to find `m2 != m1` such that `f(m1) = f(m2)`
+  - *Collision resistance*: should be difficult to find *any* two messages `m1 != m2` such that `f(m1) = f(m2)`
+
+With the above properties, the idea of using the hash of commit contents as a name is extremely unlikely to fail, *even when the system is used maliciously*
+
+### SHA1
+
+- Git uses **SHA1** (Secure Hash Function 1)
+  - **SHA1** is a cryptographic hash function
+  - Developed by the NSA and published by NSIT
+- Can play around with this using the `hashlib` module in Python3
+- All object names in Git are 160-bit hash codes of contents, in hex
+- A recent commit in the shared CS61B repository could be fetched (if needed) with
+  - `git checkout 3b30599cc43f4616eb626f8fa4fb2d0610d97963`
+  - Notice that the above is the 160-bit hash code of contents!
+
+### Low-Level Blob Management
+
+Find the hashcode that Git uses for the "blob" containing file `something.java` with
+- `git hash-object something.java`
+
+If the above tells you that the file would have hash code
+- `192a0ca0d159f1550b0b5e102f7e06867cc44782`
+
+and you actually `git add` this file, its compresed contents will be stored in the file
+- `.git/objects/19/2a0ca0d159f1550b0b5e102f7e06867cc44782`
+
+and you can look at them (uncompressed) with
+- `git cat-file -p 192a0ca0d159f1550b0b5e102f7e06867cc44782`
 
 ## Lecture 33, 11/10/21 (Wk12): Graphs, Introduction, Traversals
 
