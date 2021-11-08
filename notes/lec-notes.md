@@ -1083,19 +1083,19 @@ Examples of *recursive depth-first traversal*, *topological sorting*, *depth-fir
 
 ### Subtitle #1
   
-https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect34.pdf
+TBD: https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect34.pdf
 
 ## Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences
 
 ### Subtitle #1
   
-https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect32.pdf
+TBD: https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect32.pdf
 
 ## Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types
 
 ### Subtitle #1
   
-https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect36.pdf
+TBD: https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect36.pdf
 
 ## Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection
 
