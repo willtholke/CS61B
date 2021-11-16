@@ -145,19 +145,21 @@
     - [Traversing a Graph](#traversing-a-graph)
     - [Examples](#examples)
   - [Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find](#lecture-34-111221-wk12-a-search-minimal-spanning-trees-union-find)
-    - [Subtitle #1](#subtitle-1)
+    - [A* Search](#a-search)
+    - [Minimum Spanning Trees](#minimum-spanning-trees)
+    - [Kruskal’s Algorithm](#kruskals-algorithm)
   - [Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences](#lecture-35-111521-wk13-pseudo-random-sequences)
-    - [Subtitle #1](#subtitle-1-1)
+    - [Why Random Sequences?](#why-random-sequences)
   - [Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types](#lecture-36-111721-wk13-dynamic-programming-enumeration-types)
-    - [Subtitle #1](#subtitle-1-2)
+    - [Subtitle #1](#subtitle-1)
   - [Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection](#lecture-37-111921-wk13-threads-garbage-collection)
-    - [Subtitle #1](#subtitle-1-3)
+    - [Subtitle #1](#subtitle-1-1)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-2)
   - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-5)
+    - [Subtitle #1](#subtitle-1-3)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-6)
+    - [Subtitle #1](#subtitle-1-4)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -1081,21 +1083,43 @@ Examples of *recursive depth-first traversal*, *topological sorting*, *depth-fir
 
 ## Lecture 34, 11/12/21 (Wk12): A* Search, Minimal spanning trees, Union-find
 
-### Subtitle #1
-  
-TBD: https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect34.pdf
+### A* Search
+
+To be updated
+
+### Minimum Spanning Trees
+
+To be updated
+
+### Kruskal’s Algorithm
+
+To be updated
 
 ## Lecture 35, 11/15/21 (Wk13): Pseudo-Random Sequences
 
-### Subtitle #1
-  
-TBD: https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect32.pdf
+### Why Random Sequences?
+
+A **random sequence** is an unpredictable sequence where all numbers occur with equal frequency. "Truly" random sequences must have some nondeterministic external source
+
+A **pseudo-random sequence** is a deterministic sequence that passes some given set of statistical tests that random sequences (probably) pass
+
+**We might use random sequences to:**
+
+1) Choose statistical samples
+2) Run simulations
+3) Construct random algorithms
+4) Construct games
+5) Help in cryptography
+   - Choosing random keys and **nonces**, random one-time values used to make messages unique
+   - Generating streams of random bits
+
+To be updated
 
 ## Lecture 36, 11/17/21 (Wk13): Dynamic Programming, Enumeration Types
 
 ### Subtitle #1
-  
-TBD: https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/lectures/lect36.pdf
+
+-
 
 ## Lecture 37, 11/19/21 (Wk13): Threads, Garbage Collection
 
