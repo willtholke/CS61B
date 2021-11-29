@@ -156,10 +156,17 @@
     - [Subtitle #1](#subtitle-1-1)
   - [Lecture 38, 11/22/21 (Wk14): Continued from Friday](#lecture-38-112221-wk14-continued-from-friday)
     - [Subtitle #1](#subtitle-1-2)
-  - [Lecture 39, 11/30/21 (Wk15): Compression](#lecture-39-113021-wk15-compression)
-    - [Subtitle #1](#subtitle-1-3)
+  - [Lecture 39, 11/29/21 (Wk15): Compression](#lecture-39-112921-wk15-compression)
+    - [Resources](#resources-1)
+    - [Algorithms Operating on Bits](#algorithms-operating-on-bits)
+    - [Delta Compression & Git](#delta-compression--git)
+    - [Prefix Free Codes: Overview](#prefix-free-codes-overview)
+    - [Prefix Free Codes: Design](#prefix-free-codes-design)
+    - [Shanon-Fado Coding](#shanon-fado-coding)
+    - [Huffman Coding](#huffman-coding)
+    - [Other Ideas](#other-ideas)
   - [Lecture 40, 12/01/21 (Wk15): TBD](#lecture-40-120121-wk15-tbd)
-    - [Subtitle #1](#subtitle-1-4)
+    - [Subtitle #1](#subtitle-1-3)
 
 ## Lecture 1, 08/25/21 (Wk1): Intro, Hello World Java
 
@@ -1133,13 +1140,69 @@ To be updated
   
 -
 
-## Lecture 39, 11/30/21 (Wk15): Compression
+## Lecture 39, 11/29/21 (Wk15): Compression
 
-### Subtitle #1
-  
+### Resources
+
+- [Associated Josh Hug Lecture Playlist](https://www.youtube.com/playlist?list=PL8FaHk7qbOD6kGO6F1uWKggr-Ie9TCMUZ)
+
+### Algorithms Operating on Bits
+
+Given a *sequence of bits*, feeding those bits to a compression algorithm produces a *sequence of compressed bits*.
+
+Given that resulting sequence, feeding it to a decompression algorithm produces the initial sequence of bits.
+
+A **lossless** model of compression enforces the rule that *no information is lost*. Even with lossless compression, the text files are often compressible by 70% or more.
+
+### Delta Compression & Git
+
+In Git, there will be many versions of a file in a Git repository. Git doesn't keep track of where each file came and frmo where, but it can guess that files with the same name and (roughly) the same size in two commits are probably versions of the same file.
+
+When the above happens, Git *stores one of them as the pointer to the other* as well as a *list of changes*.
+
+
+### Prefix Free Codes: Overview
+
+An easy way to compress text is to, instead of storing English characters as bits (e.g. 'd' is 01100100), *we associate codewords with symbols*.
+
+Having a **prefix free code** helps us avoid ambiguity by allowing us to determine the meaning behind bits that seem to have more than one meaning. A **prefix free code** is one in which no codeword is a prefix of any other.
+
+<img src="images/../../images/lec-39-0.png">
+
+### Prefix Free Codes: Design
+
+Some prefix-free codes are better for some texts than others.
+
+<img src="images/../../images/lec-39-1.png">
+
+### Shanon-Fado Coding
+
+- Count the relative frequencies of all characters in a text
+- Split the space of possible symbols into a half of roughly equal frequency
+  - The left half gets a leading zero
+  - The right half gets a leading one
+  - Repeat
+
+This approach is not optimal, which brings us to **Huffman Coding**
+
+### Huffman Coding
+
+- Calculate relative frequencies
+- Given each node a weight corresponding to its frequency
+- Take the two smallest nodes and merge into a super node with weight equal to sum of two weights
+- Repeat until everything is part of a tree
+  - Left link has 0
+  - Right link has 1
+  - Weights are irrelevant after creating the tree
+
+### Other Ideas
+
+- The **LZW Algorithm** is named after its inventors: Lempel, Ziv, and Welch
+- Compressing a compressed text is redundant because compressed texts have **high information entropy**
+- Our texts are compressable because they have a great deal of redundancy, aka **low information entropy**
 
 ## Lecture 40, 12/01/21 (Wk15): TBD
 
 ### Subtitle #1
-  
+
 -
